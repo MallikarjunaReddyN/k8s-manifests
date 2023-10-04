@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: demoservice
-          image: mallireddy1998/demo-service
+          image: mallireddy1998/demo-service:$(( github.run_number }}
           ports:
             - containerPort: 1186
