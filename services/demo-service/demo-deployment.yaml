@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: demoservice
-          image: mallireddy1998/demo-service:44
+          image: mallireddy1998/demo-service:46
           ports:
             - containerPort: 1186
