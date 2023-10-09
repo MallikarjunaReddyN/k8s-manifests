@@ -21,14 +21,14 @@ spec:
             httpGet:
               port: {{ .Values.service.port }}
               path: /actuator/health/liveness
-            initialDelaySeconds: 60
-            periodSeconds: 10
+            initialDelaySeconds: 300
+            periodSeconds: 20
           readinessProbe:
             httpGet:
               port: {{ .Values.service.port }}
               path: /actuator/health/readiness
-            initialDelaySeconds: 60
-            periodSeconds: 10
+            initialDelaySeconds: 300
+            periodSeconds: 20
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           ports:
