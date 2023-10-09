@@ -21,7 +21,7 @@ spec:
             httpGet:
               port: {{ .Values.service.port }}
               path: /actuator/health/liveness
-            initialDelaySeconds: 30
+            initialDelaySeconds: 60
             periodSeconds: 10
           readinessProbe:
             httpGet:
