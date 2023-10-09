@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: mallireddy1998/product-service:"6"
+  repository: mallireddy1998/product-service:6
   pullPolicy: IfNotPresent
 
 service:
