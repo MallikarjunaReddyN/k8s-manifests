@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: mallireddy1998/payment-service
+  repository: mallireddy1998/payment-service:"4"
 
 resources: 
   limits:
