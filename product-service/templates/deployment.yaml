@@ -15,7 +15,8 @@ spec:
     spec:
       containers:
         - name: productservice
-          image: {{ .Values.image }}
+          image: {{ .Values.image.repository }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
           livenessProbe:
             httpGet:
               port: {{ .Values.service.port }}
