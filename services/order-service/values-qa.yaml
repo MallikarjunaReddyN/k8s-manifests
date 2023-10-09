@@ -1,0 +1,12 @@
+replicaCount: 2
+
+image:
+  repository: mallireddy1998/order-service
+
+resources: 
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
