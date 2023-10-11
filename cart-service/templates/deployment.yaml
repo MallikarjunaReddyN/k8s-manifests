@@ -29,7 +29,7 @@ spec:
               path: /cart/status
             initialDelaySeconds: 60
             periodSeconds: 10
-          resources:
-            {{- toYaml .Values.resources | nindent 12 }}
+          #resources:
+          #  {{- toYaml .Values.resources | nindent 12 }}
           ports:
             - containerPort: {{ .Values.service.port }}
