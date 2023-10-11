@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cart-service
+  labels:
+    app: cartservice
+spec:
+  selector:
+    matchLabels:
+      app: cartservice
+  template:
+    metadata:
+      labels:
+        app: cartservice
+    spec:
+      containers:
+        - name: cartservice
+          image: {{ .Values.image.repository }}
+          pullPolicy: IfNotPresent
+          livenessProbe:
+            httpGet:
+              port: {{ .Values.service.port }}
+              path: /actuator/health/liveness
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              port: {{ .Values.service.port }}
+              path: /actuator/health/readiness
+            initialDelaySeconds: 60
+            periodSeconds: 10
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          ports:
+            - containerPort: {{ .Values.service.port }}

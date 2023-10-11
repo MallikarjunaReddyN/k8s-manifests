@@ -1,0 +1,16 @@
+replicaCount: 2
+
+image:
+  repository: mallireddy1998/cart-service
+
+service:
+  type: ClusterIP
+  port: 1877
+
+resources: 
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
