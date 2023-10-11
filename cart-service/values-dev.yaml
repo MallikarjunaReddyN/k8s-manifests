@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: mallireddy1998/cart-service:4
+  repository: mallireddy1998/cart-service:5
 
 service:
   type: ClusterIP
