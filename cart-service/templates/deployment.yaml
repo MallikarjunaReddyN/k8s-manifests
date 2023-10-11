@@ -5,6 +5,9 @@ metadata:
   labels:
     app: cartservice
 spec:
+  replicas: {{ .Values.replicaCount }}
+  strategy:
+    type: RollingUpdate
   selector:
     matchLabels:
       app: cartservice
