@@ -20,13 +20,13 @@ spec:
           livenessProbe:
             httpGet:
               port: {{ .Values.service.port }}
-              path: /cart/status
+              path: /actuator/health/readiness
             initialDelaySeconds: 30
             periodSeconds: 10
           readinessProbe:
             httpGet:
               port: {{ .Values.service.port }}
-              path: /cart/status
+              path: /actuator/health/readiness
             initialDelaySeconds: 60
             periodSeconds: 10
           #resources:
